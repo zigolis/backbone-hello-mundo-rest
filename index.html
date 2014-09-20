@@ -1,0 +1,886 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>blogMV*</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide nobackground earth" style="text-align:center">
+    <hgroup class="auto-fadein" style="display:inline-block;margin-top:200px">
+      <h1 data-config-title style="padding-top:20px;"><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle class="small" style="margin-top:0;text-align:right !important;"><!-- populated from slide_config.json --></h2>
+    </hgroup>
+
+      <p data-config-presenter class="zig" style="margin-top:200px;letter-spacing:1px;"><!-- populated from slide_config.json --></p>
+  </slide>
+
+  <slide>
+    <aside class="gdbar zigbar">
+        <span class="blogmv">@zigolis</span>
+    </aside>
+
+    <article class="flexbox hcenter" style="margin-top:100px;">
+       <img src="images/mosaic_logo_full.png" width="90%">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Agenda</h2>
+    </hgroup>
+
+    <article>
+      <ul class="my-style">
+        <li>SOFEA</li>
+        <li>REST</li>
+        <li>Backbone</li>
+        <li>HTML5</li>
+        <li>blogMV*</li>
+        <li>Show me the code bitch!!!</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="bgblack">
+    <hgroup>
+      <h2>WTF is SOFEA?</h2>
+    </hgroup>
+
+    <article class="flexbox vcenter hcenter">
+       <img src="images/livro_sofia.png" width="80%">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SOFEA?</h2>
+    </hgroup>
+
+    <article class="hcenter">
+        <br>
+       <h3>Service Oriented Front End Architecture</h3><br><br>
+
+       <p>"Proposes to remove all presentation <br>
+       layer logic from the server to JavaScript <br>
+       logic on the client."</p>
+
+       <p class="hright">
+           <a href="https://sites.google.com/a/thinserverarchitecture.com/home/Definitions">
+               thinserverarchitecture.com
+           </a>
+       </p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">O que ganhamos com isso?</h2>
+    </hgroup>
+
+    <article>
+      <ul class="my-style">
+        <br>
+        <br>
+        <li>Divisão de responsabilidades no desenvolvimento</li>
+        <li>Baixo acoplamento das camadas</li>
+        <li>Comunicação client/server através de verbos HTTP</li>
+        <li>O client requisita o que e quando</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>REST</h2>
+    </hgroup>
+
+    <article>
+        <br><br>
+        <p class="hcenter">“Software architectural style consisting of a <br>
+        coordinated set of architectural constraints applied <br> components,
+        conectors and data elements, within <br> a distributed hypermedia system.”</p>
+
+        <p class="hright">
+            <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">
+                Roy Thomas Fielding
+            </a>
+        </p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Características</h2>
+    </hgroup>
+
+    <article>
+      <ul class="my-style">
+      <br>
+        <li>Client-Server</li>
+        <li>Stateless</li>
+        <li>Cache</li>
+        <li>HTTP verbs: GET, POST, PUT, DELETE...</li>
+        <li>Status code</li>
+        <li>Content negociation (Accept: json, xml, html)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="title-slide nobackground">
+    <article class="flexbox vcenter hcenter">
+       <img src="images/backbone.png" width="80%">
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Backbone</h2>
+    </hgroup>
+
+    <article>
+          <br><br><br>
+          <p class="hcenter">“Gives structure to web applications by providing <br>
+          models, collections and views to consume API over <br> a RESTful JSON
+          interface.”</p>
+
+          <p class="hright">
+              <a href="http://backbonejs.org/">
+                  backbonejs.org
+              </a>
+          </p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Idéia geral</h2>
+    </hgroup>
+
+    <article>
+        <br><br><br>
+          <p class="hcenter">"Te permite ter o poder de uma arquitetura MV* <br>
+          além do controle sobre a mesma, para consumir API <br> através de uma
+           interface RESTful."</p>
+
+          <p class="hright">
+              <a href="http://zigolis.com">
+                  Eu mesmo
+              </a>
+          </p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Características</h2>
+    </hgroup>
+
+    <article>
+      <ul class="my-style">
+      <br>
+        <li>Poderosa LIB JavaScript</li>
+        <li>Adaptável, baseada no padrão MV*</li>
+        <li>Moderninha, largamente usada em SPA</li>
+        <li>Magrinha, apenas 6.5Kb</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Pontos negativos</h2>
+    </hgroup>
+
+    <article>
+      <ul class="my-style">
+      <br>
+        <li>Memory leak</li>
+        <li>One template per view</li>
+        <li>No way data-binding</li>
+        <li>Comunidade pequena no Brasil</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Quem está usando?</h2>
+    </hgroup>
+
+    <article class="flexbox hcenter">
+       <img src="images/khan.png" width="20%">
+       <img src="images/popcorntime.png" width="15%">
+       <img src="images/soundcloud.jpg" width="20%">
+       <img src="images/disqus.png" width="15%">
+       <img src="images/bitbucket.png" width="15%"><br><br>
+       <img src="images/wordpress.png" width="20%">
+       <img src="images/netflix.png" width="20%">
+       <img src="images/airbnb.jpg" width="20%">
+       <img src="images/foursquare.png" width="20%"><br><br><br>
+       <img src="images/grooveshark.png" width="20%">
+       <img src="images/rdio.png" width="20%">
+       <img src="images/trello.png" width="20%">
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Desmistificando...</h2>
+    </hgroup>
+
+    <article>
+        <ul class="build my-style">
+          <li>Putz, Backbone é complicado;</li>
+          <li class="reply">Que nada é super simples, ele implementa diversos conceitos de O.O.</li>
+          <li>Ah! é muito verboso;</li>
+          <li class="reply">Uéh, qual o problema disso? A gente é mágico ou programador?</li>
+          <li>Piá, arquiteturas MV* são coisas do capeta;</li>
+          <li class="reply">Tá louco, é a coisa mais incrível e organizada que existe!</li>
+          <li>Hey, MVC é muito engessado;</li>
+          <li class="reply">No Backbone não, no MV* é tudo bem desacoplado :-)</li>
+        </ul>
+     </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter hcenter">
+       <h2>Arquitetura MV*</h2><br>
+       <h3>Model + View + Whatever you need!!!</h3>
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">View</h2>
+    </hgroup>
+
+    <article class="hcenter vcenter">
+        <h3>É o que o cliente vê</h3>
+       <img src="images/view.jpg" width="700px" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Model</h2>
+    </hgroup>
+
+    <article class="flexbox hcenter vcenter">
+        <h3>É o responsável pelo que a view consome</h3>
+       <img src="images/model.jpg" width="25%">
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Collection</h2>
+    </hgroup>
+
+    <article class="flexbox hcenter vcenter">
+        <h3>É uma coleção de modelos</h3>
+       <img src="images/collection.png" width="60%">
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">* Whatever you need</h2>
+    </hgroup>
+
+    <article class="flexbox hcenter vcenter">
+        <h3>É o que você precisar para a sua aplicação</h3>
+       <img src="images/whatever.png" width="65%">
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Na prática isso quer dizer...</h2>
+    </hgroup>
+
+    <article class="flexbox hcenter vcenter">
+       <img src="images/tictactoe-code.png" width="70%">
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Tic Tac Toe Game</h2>
+    </hgroup>
+
+    <article class="flexbox hcenter vcenter">
+       <a href="http://0.0.0.0:5678/" target="_blank"><img src="images/tictactoe.png" width="65%"></a>
+     </article>
+  </slide>
+
+  <slide class="title-slide nobackground">
+    <article class="flexbox vcenter hcenter">
+       <span><img src="images/html_logo.png" width=""></span>
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 é a n...</h2>
+    </hgroup>
+
+    <br><br><br><br><br><br>
+    <h3 style="line-height:40px;margin-left:150px;width:300px;text-align:center">Tá de brinqueichon <br> uite me, cara?</h3>
+
+    <img src="images/joel_facts.png" class="joel build" width="550">
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML5 Rocks</h2>
+    </hgroup>
+
+    <article class="flexbox vcenter hcenter">
+       <img src="images/html5rocks.png" width="75%">
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>W3C</h2>
+    </hgroup>
+
+    <article class="flexbox vcenter hcenter">
+       <img src="images/html5w3c.png" width="75%">
+     </article>
+  </slide>
+
+  <slide class="nobackground" style="background:#203041">
+    <article class="flexbox vcenter">
+      <span><img src="images/blogmv.png"></span>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>blogMV o quê?</h2>
+    </hgroup>
+
+    <article>
+       <ul class="my-style">
+        <li>Iniciativa open source brasileira que visa ensinar a criação de SPA através de
+        libs ou frameworks sobre um esqueleto comum.
+            <ul>
+                <li>Backbone.js</li>
+                <li>Angular.js</li>
+                <li>React.js</li>
+                <li>Ember.js</li>
+                <li>Knockout.js</li>
+                <li>Just Vanilla baby</li>
+            </ul>
+        </li>
+      </ul>
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Mas por quê?</h2>
+    </hgroup>
+
+    <article>
+        <ul class="my-style">
+            <li>Queremos contribuir com o crescimento profissional da comunidade
+            e aumentar o engajamento e envolvimento da mesma em:
+                <ul>
+                    <br>
+                    <li>Debates</li>
+                    <li>Projetos</li>
+                    <li>Encontros</li>
+                    <li>Colaborações</li>
+                </ul>
+            </li>
+        </ul>
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Para quem?</h2>
+    </hgroup>
+
+    <article>
+        <p>Estamos em um estágio inicial e por isso codamos apenas soluções
+        com BackboneJS, mas incentivamos você a colaborar para o projeto com a
+        sua própria implementação.</p>
+
+        <ul>
+            <br>
+            <li><a target="_blank" href="http://blogmv.github.io">
+                    blogmv.github.io
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://github.com/blogmv">
+                    github.com/blogmv
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="http://zigolis.com.br/blog/desenvolvendo-spa-backbone-require-parte-1/">
+                    Backbone + Require
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.rcarvalhojs.com/javascript/2014/09/01/backbone-browserify.html">
+                    Backbone + Browserify
+                </a>
+            </li>
+        </ul>
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">blogMV*</h2>
+    </hgroup>
+
+    <article class="flexbox vcenter hcenter">
+        <a target="_blank" href="https://github.com/blogmv">
+            <img src="images/blogmv-github.png" width="40%">
+        </a>
+     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">blogMV*</h2>
+    </hgroup>
+
+    <article class="flexbox vcenter hcenter">
+        <a target="_blank" href="http://0.0.0.0:1234/">
+            <img src="images/blogmv-screen.png" width="65%">
+        </a>
+     </article>
+  </slide>
+
+    <slide>
+      <article class="flexbox vcenter hcenter">
+        <img src="images/show-me-code.png" width="600px">
+     </article>
+    </slide>
+
+  <slide>
+    <hgroup>
+      <h2>API Design</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="API">
+            GET
+            /api/articles
+
+            GET
+            /api/articles/{article_id}
+
+            PUT
+            /api/articles/{article_id}
+
+            DELETE
+            /api/articles/{article_id}
+    </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Collection</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      var ArticleCollection = Backbone.Collection.extend({
+          url:   'http://blogmv-api.appspot.com/api/articles',
+          model: ArticleModel
+      });
+
+      return ArticleCollection;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>/api/articles</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="JSON">
+        [
+           {
+              "content":"Lorem ipsum dolor sit amet, consectetur adipisicing...",
+              "id":5639445604728832,
+              "title":"Hello World"
+           },
+           {
+              "content":"Iraqi PM Nouri Maliki steps aside, ending political...",
+              "id":5707702298738688,
+              "title":"Bye World"
+           }
+        ]
+    </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Model</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      var ArticleModel = Backbone.Model.extend({
+            getTitle: function() {
+                return this.get('title');
+            },
+
+            getContent: function() {
+                return this.get('content');
+            }
+        });
+
+        return ArticleModel;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>View</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      var AppView = Backbone.View.extend({
+            initialize: function () {
+                this.setup();
+            },
+
+            setup: function () {
+                this.collection = new ArticleCollection();
+                this.collection.fetch();
+                this.listenTo(this.collection, 'sync', this.render);
+            }
+        });
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">collection.fetch();</h2>
+    </hgroup>
+
+    <br><br>
+    <article>
+      <p style="text-align:center;">Here is where the magic doesn't happen!</p><br>
+
+       <article class="flexbox vcenter hcenter">
+         <img src="images/magic.png" width="500px" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
+      </article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">this.listenTo();</h2>
+    </hgroup>
+
+    <br><br>
+    <article>
+      <p style="text-align:center;">Mágica? Fala para eles, Isabelle</p><br>
+
+       <article class="flexbox vcenter hcenter">
+         <img src="images/dont_do_more.gif" width="500px" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
+      </article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>View</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      var AppView = Backbone.View.extend({
+            render: function() {
+                this.$el.find('.list-group').html(this.template({
+                    'collection' : this.collection
+                }));
+            }
+        });
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>View</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      var AppView = Backbone.View.extend({
+            template: _.template( $('#tmp-article-list').html() ),
+
+            el: '.main'
+        });
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">HTML</h2>
+    </hgroup>
+
+    <br><br>
+    <article>
+      <pre class="prettyprint" data-lang="HTML">
+      &lt;div class=&quot;main&quot;&gt;
+          &lt;h2&gt;JS News&lt;/h2&gt;
+
+          &lt;ul class=&quot;list-group&quot;&gt;
+              &lt;script type=&quot;text/html&quot; id=&quot;tmp-article-list&quot;&gt;
+                  &lt;% collection.each(function(model){ %&gt;
+                      &lt;li&gt;
+                          &lt;a href=&quot;#article/&lt;%= model.id %&gt;&quot; class=&quot;list-group-item&quot;&gt;
+                              &lt;%= model.getTitle() %&gt;
+                          &lt;/a&gt;
+                      &lt;/li&gt;
+                  &lt;% }); %&gt;
+              &lt;/script&gt;
+          &lt;/ul&gt;
+      &lt;/div&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Divisão de responsabilidades</h2>
+    </hgroup>
+
+    <br><br>
+    <article>
+      <ul class="my-style">
+        <li>Cada camada deveria tratar das suas responsabilidades.
+            <ul>
+                <li>Collection deveria retornar apenas a coleção de models;</li>
+                <li>Model deveria retornar apenas dados íntegros do model;</li>
+                <li>View deveria retornar dados repassados pelo model;
+                    <ul>
+                        <li>Quando o dado precisar de tratamento visual para o html</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Olha o nosso filho surgindo</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+         <article class="flexbox vcenter hcenter">
+           <img src="images/menu.png" width="500px" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
+        </article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Vamos criar a nossa...</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+         <article class="flexbox vcenter hcenter">
+           <img src="images/shia_labeouf_magic.gif" width="500px" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
+        </article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>View</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      var AppView = Backbone.View.extend({
+            events: {
+                'click .list-group-item' : 'setModel'
+            },
+
+            setModel: function(){
+                this.model.set({ change: true, this.model });
+            }
+        });
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>ContentView</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      var ContentView = Backbone.View.extend({
+            initialize: function (model) {
+                this.setup(model);
+            },
+
+            setup: function (model) {
+                this.activeModel = model;
+                this.listenTo(this.activeModel, 'change', this.render);
+            }
+        });
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>ContentView</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      var ContentView = Backbone.View.extend({
+            render: function() {
+                this.$el.find('article').html(this.template({
+                    'activeModel' : this.activeModel
+                }));
+            }
+        });
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>ContentView</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">
+      template: _.template( $('#tmp-article-content').html() ),
+
+      el: '.main'
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>ContentView</h2>
+    </hgroup>
+
+    <br><br><br><br>
+    <article>
+      <pre class="prettyprint" data-lang="HTML">
+      &lt;section class=&quot;main&quot;&gt;
+          &lt;article&gt;
+              &lt;script type=&quot;text/html&quot; id=&quot;tmp-article-content&quot;&gt;
+                  &lt;h2&gt;&lt;%= activeModel.getTitle() %&gt;&lt;/h2&gt;
+                  &lt;p&gt;&lt;%= activeModel.getContent() %&gt;&lt;/p&gt;
+              &lt;/script&gt;
+          &lt;/article&gt;
+      &lt;/section&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">Nossa "mágica"...</h2>
+    </hgroup>
+
+    <br><br><br><br>
+     <article class="vcenter hcenter">
+       <img src="images/contentview.png" width="900" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 class="small">...and our "magic" <br> goes on and on</h2>
+    </hgroup>
+
+    <br><br>
+     <article class="vcenter hcenter">
+       <img src="images/goeson.png" width="500" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
+    </article>
+  </slide>
+
+
+
+  <slide class="bgblack">
+    <hgroup>
+      <h2 class="small">That's all folks!</h2>
+    </hgroup>
+
+    <br><br>
+    <article>
+         <article class="flexbox vcenter hcenter">
+           <img src="images/crockford.jpg" width="300px" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
+        </article>
+
+        <p style="text-align:right;font-style:italic">Ah! e não esqueçam do ;</p>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
