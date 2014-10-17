@@ -9,7 +9,7 @@ URL: https://code.google.com/p/io-2012-slides
 <!DOCTYPE html>
 <html>
 <head>
-  <title>blogMV*</title>
+  <title>Hello mundo REST</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
@@ -102,10 +102,10 @@ URL: https://code.google.com/p/io-2012-slides
       <ul class="my-style">
         <br>
         <br>
-        <li>Divisão de responsabilidades no desenvolvimento</li>
-        <li>Baixo acoplamento das camadas</li>
-        <li>Comunicação client/server através de verbos HTTP</li>
-        <li>O client requisita o que e quando</li>
+        <li>Divisão de responsabilidades no desenvolvimento;</li>
+        <li>Baixo acoplamento das camadas;</li>
+        <li>Comunicação client/server através de verbos HTTP;</li>
+        <li>O client requisita o que e quando;</li>
       </ul>
     </article>
   </slide>
@@ -455,7 +455,7 @@ URL: https://code.google.com/p/io-2012-slides
      </article>
   </slide>
 
-  <slide>
+  <!--slide>
     <hgroup>
       <h2 class="small">blogMV*</h2>
     </hgroup>
@@ -465,7 +465,7 @@ URL: https://code.google.com/p/io-2012-slides
             <img src="images/blogmv-github.png" width="40%">
         </a>
      </article>
-  </slide>
+  </slide-->
 
   <slide>
     <hgroup>
@@ -494,16 +494,16 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
       <pre class="prettyprint" data-lang="API">
             GET
-            /api/articles
+            /articles
 
             GET
-            /api/articles/{article_id}
+            /articles/{article_id}
 
             PUT
-            /api/articles/{article_id}
+            /articles/{article_id}
 
             DELETE
-            /api/articles/{article_id}
+            /articles/{article_id}
     </pre>
     </article>
   </slide>
@@ -528,7 +528,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>/api/articles</h2>
+      <h2>/articles</h2>
     </hgroup>
 
     <br><br><br><br>
@@ -558,7 +558,7 @@ URL: https://code.google.com/p/io-2012-slides
     <br><br><br><br>
     <article>
       <pre class="prettyprint" data-lang="javascript">
-      var ArticleModel = Backbone.Model.extend({
+        var ArticleModel = Backbone.Model.extend({
             getTitle: function() {
                 return this.get('title');
             },
@@ -581,12 +581,12 @@ URL: https://code.google.com/p/io-2012-slides
     <br><br><br><br>
     <article>
       <pre class="prettyprint" data-lang="javascript">
-      var AppView = Backbone.View.extend({
-            initialize: function () {
+        var AppView = Backbone.View.extend({
+            initialize: function() {
                 this.setup();
             },
 
-            setup: function () {
+            setup: function() {
                 this.collection = new ArticleCollection();
                 this.collection.fetch();
                 this.listenTo(this.collection, 'sync', this.render);
@@ -634,9 +634,9 @@ URL: https://code.google.com/p/io-2012-slides
     <br><br><br><br>
     <article>
       <pre class="prettyprint" data-lang="javascript">
-      var AppView = Backbone.View.extend({
+        var AppView = Backbone.View.extend({
             render: function() {
-                this.$el.find('.list-group').html(this.template({
+                this.$el('.list-group').html(this.template({
                     'collection' : this.collection
                 }));
             }
@@ -653,7 +653,7 @@ URL: https://code.google.com/p/io-2012-slides
     <br><br><br><br>
     <article>
       <pre class="prettyprint" data-lang="javascript">
-      var AppView = Backbone.View.extend({
+        var AppView = Backbone.View.extend({
             template: _.template( $('#tmp-article-list').html() ),
 
             el: '.main'
@@ -691,7 +691,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2 class="small">Divisão de responsabilidades</h2>
+      <h2 class="small">Divisão de <br><br> responsabilidades</h2>
     </hgroup>
 
     <br><br>
@@ -746,12 +746,12 @@ URL: https://code.google.com/p/io-2012-slides
     <br><br><br><br>
     <article>
       <pre class="prettyprint" data-lang="javascript">
-      var AppView = Backbone.View.extend({
+        var AppView = Backbone.View.extend({
             events: {
                 'click .list-group-item' : 'setModel'
             },
 
-            setModel: function(){
+            setModel: function() {
                 this.model.set({ change: true, this.model });
             }
         });
@@ -767,12 +767,12 @@ URL: https://code.google.com/p/io-2012-slides
     <br><br><br><br>
     <article>
       <pre class="prettyprint" data-lang="javascript">
-      var ContentView = Backbone.View.extend({
-            initialize: function (model) {
+        var ContentView = Backbone.View.extend({
+            initialize: function(model) {
                 this.setup(model);
             },
 
-            setup: function (model) {
+            setup: function(model) {
                 this.activeModel = model;
                 this.listenTo(this.activeModel, 'change', this.render);
             }
@@ -789,9 +789,9 @@ URL: https://code.google.com/p/io-2012-slides
     <br><br><br><br>
     <article>
       <pre class="prettyprint" data-lang="javascript">
-      var ContentView = Backbone.View.extend({
+        var ContentView = Backbone.View.extend({
             render: function() {
-                this.$el.find('article').html(this.template({
+                this.$el('article').html(this.template({
                     'activeModel' : this.activeModel
                 }));
             }
@@ -856,8 +856,6 @@ URL: https://code.google.com/p/io-2012-slides
        <img src="images/goeson.png" width="500" style="display:block;border:3px solid #ccc;margin:0 auto;border-radius:15px;">
     </article>
   </slide>
-
-
 
   <slide class="bgblack">
     <hgroup>

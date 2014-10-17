@@ -1152,3 +1152,7 @@ p, li, .zig {
     top: 0;
     right: 20px;
 }
+
+slides>slide:not(.nobackground):before {
+    display: none;
+}
