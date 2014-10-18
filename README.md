@@ -17,3 +17,6 @@ launch a simple one and point your default browser to [`http://localhost:8000/te
 You can also specify a custom port:
 
     $ ./serve.sh 8080
+    
+## You can see the slides online here :-D
+[Hello mundo REST, com BackboneJS](http://zigolis.github.io/backbone-hello-mundo-rest/)
