@@ -1126,7 +1126,9 @@ a {
 }
 
 .earth {
-    background: url('/../images/earth.png') no-repeat center center;
+    position: absolute;
+    left: -25px;
+    top: -180px;
 }
 
 p, li, .zig {
